@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /Users/hudson/CLionProjects/DSAP3 -B /Users/hudson/CLionProjects/DSAP3/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/hudson/CLionProjects/DSAP3/cmake-build-debug
