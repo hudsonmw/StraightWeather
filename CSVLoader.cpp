@@ -5,6 +5,12 @@
 
 void CSVLoader::load_csv(std::string city,std::string attribute) { // temp,humidity,precip,wind
     int att_key;
+    std::vector<std::string> cities = {"Chicago","New York","Phoenix","Philadelphia",
+    "Houston","San Antonio","San Diego","Dallas","San Jose","Los Angeles"};
+    if(std::find(cities.begin(),cities.end(),city) == cities.end()) {
+        std::cout << "bad city idiot" << std::endl;
+        return;
+    }
     if(attribute == "temp") {
         att_key = 2;
     } else if(attribute == "humidity") {
@@ -18,7 +24,7 @@ void CSVLoader::load_csv(std::string city,std::string attribute) { // temp,humid
         return;
     }
     std::vector<std::vector<std::string>> data;
-    std::ifstream file("/Users/benx/CLionProjects/DSAProject3/weather_data.csv");
+    std::ifstream file("~weather_data.csv");
     std::string line;
     while (std::getline(file, line)) {
         std::vector<std::string> row;
