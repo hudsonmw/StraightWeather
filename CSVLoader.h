@@ -1,7 +1,3 @@
-//
-// Created by Ben Adelman on 4/15/25.
-//
-
 #ifndef CSVLOADER_H
 #define CSVLOADER_H
 #include <vector>
