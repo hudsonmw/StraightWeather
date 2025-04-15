@@ -1,8 +1,9 @@
 
 #include <iostream>
-using namespace std;
+#include "CSVLoader.h"
 
 int main() {
-    cout << "Test" << endl;
+    CSVLoader loader;
+    loader.load_csv("Chicago","wind");
     return 0;
 }
