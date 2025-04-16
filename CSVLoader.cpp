@@ -8,7 +8,7 @@ void CSVLoader::load_csv(std::string city,std::string attribute) { // temp,humid
     std::vector<std::string> cities = {"Chicago","New York","Phoenix","Philadelphia",
     "Houston","San Antonio","San Diego","Dallas","San Jose","Los Angeles"};
     if(std::find(cities.begin(),cities.end(),city) == cities.end()) {
-        std::cout << "bad city idiot" << std::endl;
+        std::cout << "Specify a valid city!" << std::endl;
         return;
     }
     if(attribute == "temp") {
@@ -20,7 +20,7 @@ void CSVLoader::load_csv(std::string city,std::string attribute) { // temp,humid
     } else if(attribute == "wind") {
         att_key = 5;
     } else {
-        std::cout << "specify a valid attribute retard" << std::endl;
+        std::cout << "specify a valid attribute!" << std::endl;
         return;
     }
     std::vector<std::vector<std::string>> data;
