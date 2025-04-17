@@ -1,5 +1,3 @@
-# DSAProject3
+# DSAProject3 | The Bowling Boys
+## Weather Thing
 
-# All work done by Haden 
-### Hudson joined for emotional support
-### ben was also there
