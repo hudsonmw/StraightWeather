@@ -32,9 +32,7 @@ void CSVLoader::load_csv(std::string city,std::string attribute) { // temp,humid
         if(row[0] == city) {
             std::string datetime = row[1];
             double att = std::stod(row[att_key]);
-            std::vector<double> values;
-            values.push_back(att);
-            hashmap.insert(datetime, values);
+            hashmap.insert(datetime, att);
             // std::cout << datetime << " " << att << std::endl;
         }
     }

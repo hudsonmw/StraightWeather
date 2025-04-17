@@ -129,6 +129,30 @@ DSAProject3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAProject3.dir/build.make CMakeFiles/DSAProject3.dir/build
 .PHONY : DSAProject3/fast
 
+CSVLoader.o: CSVLoader.cpp.o
+.PHONY : CSVLoader.o
+
+# target to build an object file
+CSVLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAProject3.dir/build.make CMakeFiles/DSAProject3.dir/CSVLoader.cpp.o
+.PHONY : CSVLoader.cpp.o
+
+CSVLoader.i: CSVLoader.cpp.i
+.PHONY : CSVLoader.i
+
+# target to preprocess a source file
+CSVLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAProject3.dir/build.make CMakeFiles/DSAProject3.dir/CSVLoader.cpp.i
+.PHONY : CSVLoader.cpp.i
+
+CSVLoader.s: CSVLoader.cpp.s
+.PHONY : CSVLoader.s
+
+# target to generate assembly for a file
+CSVLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAProject3.dir/build.make CMakeFiles/DSAProject3.dir/CSVLoader.cpp.s
+.PHONY : CSVLoader.cpp.s
+
 hashmap.o: hashmap.cpp.o
 .PHONY : hashmap.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... DSAProject3"
+	@echo "... CSVLoader.o"
+	@echo "... CSVLoader.i"
+	@echo "... CSVLoader.s"
 	@echo "... hashmap.o"
 	@echo "... hashmap.i"
 	@echo "... hashmap.s"

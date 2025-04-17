@@ -38,21 +38,22 @@ Days in each (necessary) month:
 class HashMap {
     struct Node {
         string time;
-        vector<double> values;
+        double value;
         Node* next = nullptr;
     };
     int size; // Number of buckets, hours from 2024-01-01:00 -> 2024-05-18:23
     vector<Node*> buckets;
     int convertToHashTime(string date);
     string findTime(string date);
+    int findSeconds(string time);
 public:
     HashMap(int s = 3335) {
         size = s;
         buckets.resize(size, nullptr);
     }
-    void insert(string date, vector<double>& values);
-    vector<double>* get(string date);
-    vector<double>& operator[](string date);
+    void insert(string date, double value);
+    optional<double> get(string date);
+    double operator[](string date);
     bool remove(string date);
     string getDayData(string date);
 };
