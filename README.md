@@ -1,5 +1,5 @@
-# DSAProject3
+# StraightWeather
+## By: Benjamin Adelman, Haden Anderson, Hudson Whitney
 
-# All work done by Haden 
-### Hudson joined for emotional support
-### ben was also there
+### A simple application to access weather data by various attributes
+
