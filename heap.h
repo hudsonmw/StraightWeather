@@ -28,6 +28,7 @@ public:
 
     [[nodiscard]] bool   empty() const { return data.empty(); }
     [[nodiscard]] std::size_t size() const { return data.size(); }
+    std::optional<std::pair<std::string,double>> extractDate(std::string date);
 };
 
 #endif // HEAP_H

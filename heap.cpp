@@ -59,3 +59,13 @@ optional<pair<string,double>> MaxHeap::extractMax()
 
     return make_pair(top.datetime, top.value);
 }
+std::optional<std::pair<std::string,double>> MaxHeap::extractDate(std::string date) {
+    while(!data.empty()) {
+        optional<pair<string,double>> cur = this->peek();
+        if(cur->first == date) {
+            return cur;
+        }
+        this->extractMax();
+    }
+    return make_pair("n/a",-1);
+}
