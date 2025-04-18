@@ -24,6 +24,7 @@ void CSVLoader::load_csv(std::string city,std::string attribute) { // Pass by re
         att_key = 5;
     } else { // main function should ensure that there are only valid values passed in
         std::cout << "bad attribute" << std::endl;
+        return;
     }
     std::vector<std::vector<std::string>> data;
     std::ifstream file("~weather_data.csv");
