@@ -3,6 +3,8 @@
 #include <algorithm>
 #include "CSVLoader.h"
 #include <chrono>
+#include "heap.h"
+#include "hashmap.h"
 
 int main() {
     std::cout << "Welcome to StraightWeather!" << std::endl;
@@ -56,14 +58,12 @@ int main() {
     std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
     HashMap hashmap;
     MaxHeap heap;
-    loader.load_csv(hashmap, city, att);
-    loader.load_csv(   heap, city, att);
+    loader.load_csv(hashmap,heap, city, att);
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
     std::cout << "Data loaded in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
     bool cont = true;
     std::string option;
     std::cout << "-------------------------------------------" << std::endl;
-    std::cout << "What type of data would you like to see?" << std::endl;
     std::cout << "1. Most recent data point" << std::endl;
     std::cout << "2. Highest " << att << " recorded" << std::endl;
     std::cout << "3. Lowest " << att << " recorded" << std::endl;
@@ -73,16 +73,42 @@ int main() {
     std::cout << "7. Highest " << att << " on specific day (YYYY-MM-DD)" << std::endl;
     std::cout << "8. Average " << att << " for specific month (MM)" << std::endl;
     std::cout << "9. Exit" << std::endl;
-    std::cin >> option;
     while(cont) {
+        std::cout << "What type of data would you like to see?" << std::endl;
+        std::cin >> option;
         if(option == "1") {
-            1 == 1;
+            std::cout << "Extracting data from heap..." << std::endl;
+            optional<pair<string,double>> recent_heap = heap.getMostRecent();
         } else if (option == "2") {
-            1 == 1;
+            std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+            std::string highest_hash = hashmap.getHighest();
+            std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+            std::cout << "Hashmap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+            std::cout << "Hashmap, " << highest_hash << std::endl;
+            std::cout << std::endl;
+            begin = std::chrono::steady_clock::now();
+            optional<pair<string,double>> highest_heap = heap.getHighest();
+            end = std::chrono::steady_clock::now();
+            std::cout << "Heap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+            std::cout << "Heap, Highest: " << highest_heap->second << " on " << highest_heap->first<< std::endl;
+            std::cout << std::endl;
         } else if(option == "3") {
-            1 == 1;
+            std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+            std::string lowest_hash = hashmap.getLowest();
+            std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+            std::cout << "Hashmap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+            std::cout << "Hashmap, " << lowest_hash << std::endl;
+            std::cout << std::endl;
+            begin = std::chrono::steady_clock::now();
+            optional<pair<string,double>> lowest_heap = heap.getLowest();
+            end = std::chrono::steady_clock::now();
+            std::cout << "Heap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+            std::cout << "Heap, Lowest: " << lowest_heap->second << " on " << lowest_heap->first<< std::endl;
+            std::cout << std::endl;
         } else if(option == "4") {
-            1 == 1;
+            std::string datetime;
+            std::cout << "What datetime would you like to see data for? (YYYY-MM-DD HH:MM:SS format)" << std::endl;
+            std::getline(std::cin,datetime); // no date valid check for now
         } else if(option == "5") {
             1 == 1;
         } else if(option == "6") {
@@ -96,6 +122,5 @@ int main() {
         }
     }
     std::cout << "Thank you for using StraightWeather!" << std::endl;
-
     return 0;
 }

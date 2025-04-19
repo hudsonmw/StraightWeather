@@ -2,6 +2,7 @@
 #define HASHMAP_H
 
 #include <vector>
+#include <optional>
 using namespace std;
 
 /*-----------------

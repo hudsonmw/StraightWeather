@@ -11,7 +11,7 @@
 
 class CSVLoader {
     public:
-        void load_csv(HashMap& map,
+        void load_csv(HashMap& map,MaxHeap& heap,
                       const std::string& city,
                       const std::string& attribute);
     

@@ -6,7 +6,7 @@
 #include "hashmap.h"
 #include "heap.h"
 
-void CSVLoader::load_csv(HashMap& map, const std::string& city, const std::string& attribute) {
+void CSVLoader::load_csv(HashMap& map, MaxHeap& heap, const std::string& city, const std::string& attribute) {
     int att_key;
     std::vector<std::string> cities = {"Chicago","New York","Phoenix","Philadelphia",
         "Houston","San Antonio","San Diego","Dallas","San Jose","Los Angeles"};
@@ -25,7 +25,7 @@ void CSVLoader::load_csv(HashMap& map, const std::string& city, const std::strin
         return;
     }
 
-    std::ifstream file("weather_data.csv");
+    std::ifstream file("/Users/benx/CLionProjects/DSAProject3/weather_data.csv");
     if (!file.is_open()) {
         std::cerr << "Error: could not open weather_data.csv\n";
         return;
@@ -43,6 +43,7 @@ void CSVLoader::load_csv(HashMap& map, const std::string& city, const std::strin
             const std::string& datetime = row[1];
             double value = std::stod(row[att_key]);
             map.insert(datetime, value);
+            heap.insert(datetime,value);
         }
     }
 
