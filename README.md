@@ -1,5 +1,8 @@
-# DSAProject3
 
-# All work done by Haden 
-### Hudson joined for emotional support
-### ben was also there
+# StraightWeather
+## By: Benjamin Adelman, Haden Anderson, Hudson Whitney
+### A simple application to access weather data by various attributes
+# DSAProject3 | The Bowling Boys
+## Weather Thing
+
+
