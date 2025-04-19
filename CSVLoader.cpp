@@ -25,7 +25,7 @@ void CSVLoader::load_csv(HashMap& map, MaxHeap& heap, const std::string& city, c
         return;
     }
 
-    std::ifstream file("/Users/benx/CLionProjects/DSAProject3/weather_data.csv");
+    std::ifstream file("weather_data.csv");
     if (!file.is_open()) {
         std::cerr << "Error: could not open weather_data.csv\n";
         return;
