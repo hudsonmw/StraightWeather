@@ -2,8 +2,9 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "hashmap.h"
 
-void CSVLoader::load_csv(std::string city,std::string attribute) { // Pass by reference the hashmap and heap
+void CSVLoader::load_csv(HashMap& hashmap, std::string city,std::string attribute) { // Pass by reference the hashmap and heap
     int att_key;
     for(int i=0; i < 1000000000; i++) {
         1 == 1;
@@ -27,7 +28,7 @@ void CSVLoader::load_csv(std::string city,std::string attribute) { // Pass by re
         return;
     }
     std::vector<std::vector<std::string>> data;
-    std::ifstream file("~weather_data.csv");
+    std::ifstream file("weather_data.csv");
     std::string line;
     while (std::getline(file, line)) { // parses through .csv one line at a time
         std::vector<std::string> row;
@@ -39,7 +40,8 @@ void CSVLoader::load_csv(std::string city,std::string attribute) { // Pass by re
         if(row[0] == city) {
             std::string datetime = row[1];
             double att = std::stod(row[att_key]);
-            std::cout << datetime << " " << att << std::endl;
+            // std::cout << datetime << " " << att << std::endl;
+            hashmap.insert(datetime, att);
         }
     }
     file.close();

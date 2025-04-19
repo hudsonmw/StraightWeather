@@ -55,14 +55,22 @@ int main() {
     std::cout << "Loading data..." << std::endl;
     std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
     // Heap heap;
-    // HashMap hashmap;
-    loader.load_csv(city,att);
+    HashMap hashmap;
+    loader.load_csv(hashmap, city,att);
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
     std::cout << "Data loaded!" << std::endl;
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << " milliseconds" << std::endl;
 
-
-    return 0;
+    cout << hashmap.getHighest() << endl;
+    cout << hashmap.getLowest() << endl;
+    cout << hashmap.getAverage() << endl;
+    cout << hashmap.getDayHighest("2024-01-01") << endl;
+    cout << hashmap.getDayLowest("2024-01-01") << endl;
+    cout << hashmap.getDayAverage("2024-01-01") << endl;
+    cout << hashmap.getMonthHighest("2024-01-01") << endl;
+    cout << hashmap.getMonthLowest("2024-01-01") << endl;
+    cout << hashmap.getMonthAverage("2024-01-01") << endl;
+    // return 0;
 
     // Hashmap Testing Section
     /*

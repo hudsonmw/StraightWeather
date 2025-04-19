@@ -44,6 +44,7 @@ class HashMap {
     int size; // Number of buckets, hours from 2024-01-01:00 -> 2024-05-18:23
     vector<Node*> buckets;
     int convertToHashTime(string date);
+    string convertFromHashTime(int hours);
     string findTime(string date);
     int findSeconds(string time);
 public:
@@ -56,6 +57,15 @@ public:
     double operator[](string date);
     bool remove(string date);
     string getDayData(string date);
+    string getHighest();
+    string getLowest();
+    string getAverage();
+    string getDayHighest(string date);
+    string getDayLowest(string date);
+    string getDayAverage(string date);
+    string getMonthHighest(string date);
+    string getMonthLowest(string date);
+    string getMonthAverage(string date);
 };
 
 
