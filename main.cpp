@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <algorithm>
 #include "CSVLoader.h"
 #include <chrono>
 
@@ -32,7 +33,7 @@ int main() {
     }
     std::cout << "-------------------------------------------" << std::endl;
     bool att_bool = false;
-    std::vector<std::string> attributes = {"Temperature","Humidity","Percipitation","Wind"};
+    std::vector<std::string> attributes = {"Temperature","Humidity","Precipitation","Wind"}; //minor typo on precipitation you absolute bafoon
     std::string att;
     while(!att_bool) {
         std::cout << "Avalible Attributes:" << std::endl;
