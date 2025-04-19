@@ -2,31 +2,32 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "hashmap.h"
 
-void CSVLoader::load_csv(std::string city,std::string attribute) { // temp,humidity,precip,wind
+void CSVLoader::load_csv(HashMap& hashmap, std::string city,std::string attribute) { // Pass by reference the hashmap and heap
     int att_key;
-    std::vector<std::string> cities = {"Chicago","New York","Phoenix","Philadelphia",
+    std::vector<std::string> cities = {"Chicago","New York","Phoenix","Philadelphia", // all avalible cities
     "Houston","San Antonio","San Diego","Dallas","San Jose","Los Angeles"};
     if(std::find(cities.begin(),cities.end(),city) == cities.end()) {
-        std::cout << "Specify a valid city!" << std::endl;
+        std::cout << "bad city" << std::endl;
         return;
     }
-    if(attribute == "temp") {
-        att_key = 2;
-    } else if(attribute == "humidity") {
+    if(attribute == "Temperature") {
+        att_key = 2; // stores index of column which stores desired attribute
+    } else if(attribute == "Humidity") {
         att_key = 3;
-    } else if(attribute == "precip") {
+    } else if(attribute == "Precipitation") {
         att_key = 4;
-    } else if(attribute == "wind") {
+    } else if (attribute == "Wind"){
         att_key = 5;
-    } else {
-        std::cout << "specify a valid attribute!" << std::endl;
+    } else { // main function should ensure that there are only valid values passed in
+        std::cout << "bad attribute" << std::endl;
         return;
     }
     std::vector<std::vector<std::string>> data;
-    std::ifstream file("~weather_data.csv");
+    std::ifstream file("weather_data.csv");
     std::string line;
-    while (std::getline(file, line)) {
+    while (std::getline(file, line)) { // parses through .csv one line at a time
         std::vector<std::string> row;
         std::stringstream ss(line);
         std::string cell;
@@ -36,7 +37,8 @@ void CSVLoader::load_csv(std::string city,std::string attribute) { // temp,humid
         if(row[0] == city) {
             std::string datetime = row[1];
             double att = std::stod(row[att_key]);
-            std::cout << datetime << " " << att << std::endl;
+            // std::cout << datetime << " " << att << std::endl;
+            hashmap.insert(datetime, att);
         }
     }
     file.close();
