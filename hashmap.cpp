@@ -61,7 +61,7 @@ string HashMap::convertFromHashTime(int hours) {
     } else { // January
         month = "01-";
     }
-    days = to_string((hours - (hours % 24)) / 24);
+    days = to_string((hours - (hours % 24)) / 24 + 1);
     if (days.length() < 2) days = "0" + days;
     hrs = to_string(hours % 24);
     return "2024-" + month + days + " " + hrs;;
