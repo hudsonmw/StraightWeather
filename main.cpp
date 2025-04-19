@@ -57,9 +57,43 @@ int main() {
     // HashMap hashmap;
     loader.load_csv(city,att);
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-    std::cout << "Data loaded!" << std::endl;
-    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << " milliseconds" << std::endl;
-
+    std::cout << "Data loaded in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+    bool cont = true;
+    std::string option;
+    std::cout << "-------------------------------------------" << std::endl;
+    std::cout << "What type of data would you like to see?" << std::endl;
+    std::cout << "1. Most recent data point" << std::endl;
+    std::cout << "2. Highest " << att << " recorded" << std::endl;
+    std::cout << "3. Lowest " << att << " recorded" << std::endl;
+    std::cout << "4. Specific datetime (YYYY-MM-DD HH:MM:SS)" << std::endl;
+    std::cout << "5. Average " << att << " on specific day (YYYY-MM-DD)" << std::endl;
+    std::cout << "6. Lowest " << att << " on specific day (YYYY-MM-DD)" << std::endl;
+    std::cout << "7. Highest " << att << " on specific day (YYYY-MM-DD)" << std::endl;
+    std::cout << "8. Average " << att << " for specific month (MM)" << std::endl;
+    std::cout << "9. Exit" << std::endl;
+    std::cin >> option;
+    while(cont) {
+        if(option == "1") {
+            1 == 1;
+        } else if (option == "2") {
+            1 == 1;
+        } else if(option == "3") {
+            1 == 1;
+        } else if(option == "4") {
+            1 == 1;
+        } else if(option == "5") {
+            1 == 1;
+        } else if(option == "6") {
+            1 == 1;
+        } else if (option == "7") {
+            1 == 1;
+        } else if (option == "8") {
+            1 == 1;
+        } else if(option == "9") {
+            cont = false;
+        }
+    }
+    std::cout << "Thank you for using StraightWeather!" << std::endl;
 
     return 0;
 }

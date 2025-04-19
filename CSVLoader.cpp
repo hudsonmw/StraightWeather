@@ -5,9 +5,6 @@
 
 void CSVLoader::load_csv(std::string city,std::string attribute) { // Pass by reference the hashmap and heap
     int att_key;
-    for(int i=0; i < 1000000000; i++) {
-        1 == 1;
-    }
     std::vector<std::string> cities = {"Chicago","New York","Phoenix","Philadelphia", // all avalible cities
     "Houston","San Antonio","San Diego","Dallas","San Jose","Los Angeles"};
     if(std::find(cities.begin(),cities.end(),city) == cities.end()) {
