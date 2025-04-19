@@ -53,9 +53,10 @@ int main() {
     std::cout << "-------------------------------------------" << std::endl;
     std::cout << "Loading data..." << std::endl;
     std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-    // Heap heap;
-    // HashMap hashmap;
-    loader.load_csv(city,att);
+    HashMap hashmap;
+    MaxHeap heap;
+    loader.load_csv(hashmap, city, att);
+    loader.load_csv(   heap, city, att);
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
     std::cout << "Data loaded in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
     bool cont = true;
