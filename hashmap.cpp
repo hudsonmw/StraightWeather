@@ -61,7 +61,7 @@ string HashMap::convertFromHashTime(int hours) {
     } else { // January
         month = "01-";
     }
-    days = to_string((hours - (hours % 24)) / 24);
+    days = to_string((hours - (hours % 24)) / 24 + 1);
     if (days.length() < 2) days = "0" + days;
     hrs = to_string(hours % 24);
     return "2024-" + month + days + " " + hrs;;
@@ -264,7 +264,7 @@ string HashMap::getDayHighest(string date) {
             curr = curr->next;
         }
     }
-    string returnstr = "Highest on " + date.substr(0, 10) + " at " + d + " : ";
+    string returnstr = "Highest on " + date.substr(0, 10) + " : ";
     std::ostringstream ss;
     ss << std::fixed << std::setprecision(4);
     ss << highest;
@@ -290,7 +290,7 @@ string HashMap::getDayLowest(string date) {
             curr = curr->next;
         }
     }
-    string returnstr = "Lowest on " + date.substr(0, 10) + " at " + d + " : ";
+    string returnstr = "Lowest on " + date.substr(0, 10) + " : ";
     std::ostringstream ss;
     ss << std::fixed << std::setprecision(4);
     ss << lowest;
