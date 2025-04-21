@@ -221,7 +221,7 @@ string HashMap::getLowest() {
     }
     string returnstr = "Lowest: ";
     std::ostringstream ss;
-    ss << std::fixed << std::setprecision(4);
+    // ss << std::fixed << std::setprecision(4);
     ss << lowest;
     returnstr += ss.str() + " on: " + d;
     return returnstr;
@@ -240,7 +240,7 @@ string HashMap::getAverage() {
     }
     string returnstr = "Average: ";
     std::ostringstream ss;
-    ss << std::fixed << std::setprecision(4);
+    // ss << std::fixed << std::setprecision(4);
     ss << sum / count;
     returnstr += ss.str();
     return returnstr;
@@ -266,7 +266,7 @@ string HashMap::getDayHighest(string date) {
     }
     string returnstr = "Highest on " + date.substr(0, 10) + " : ";
     std::ostringstream ss;
-    ss << std::fixed << std::setprecision(4);
+    // ss << std::fixed << std::setprecision(4);
     ss << highest;
     returnstr += ss.str();
     return returnstr;
@@ -292,7 +292,7 @@ string HashMap::getDayLowest(string date) {
     }
     string returnstr = "Lowest on " + date.substr(0, 10) + " : ";
     std::ostringstream ss;
-    ss << std::fixed << std::setprecision(4);
+    // ss << std::fixed << std::setprecision(4);
     ss << lowest;
     returnstr += ss.str();
     return returnstr;
@@ -312,7 +312,7 @@ string HashMap::getDayAverage(string date) {
     }
     string returnstr = "Average on " + date.substr(0, 10) + " : ";
     std::ostringstream ss;
-    ss << std::fixed << std::setprecision(4);
+    // ss << std::fixed << std::setprecision(4);
     ss << sum / count;
     returnstr += ss.str();
     return returnstr;
@@ -341,7 +341,7 @@ string HashMap::getMonthHighest(string date) {
     }
     string returnstr = "Highest on " + d.substr(0, 10) + " at " + d.substr(11, 8) + " : ";
     std::ostringstream ss;
-    ss << std::fixed << std::setprecision(4);
+    // ss << std::fixed << std::setprecision(4);
     ss << highest;
     returnstr += ss.str();
     return returnstr;
@@ -370,7 +370,7 @@ string HashMap::getMonthLowest(string date) {
     }
     string returnstr = "Highest on " + d.substr(0, 10) + " at " + d.substr(11, 8) + " : ";
     std::ostringstream ss;
-    ss << std::fixed << std::setprecision(4);
+    // ss << std::fixed << std::setprecision(4);
     ss << lowest;
     returnstr += ss.str();
     return returnstr;
@@ -403,7 +403,7 @@ string HashMap::getMonthAverage(string date) {
     if (date.substr(5, 2) == "05") returnstr += "May";
     returnstr += " : ";
     std::ostringstream ss;
-    ss << std::fixed << std::setprecision(4);
+    // ss << std::fixed << std::setprecision(4);
     ss << sum / count;
     returnstr += ss.str();
     return returnstr;
