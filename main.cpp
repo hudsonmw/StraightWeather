@@ -105,7 +105,7 @@ int main() {
             std::string datetime;
             std::cout << "What datetime would you like to see data for? (YYYY-MM-DD HH:MM:SS format)" << std::endl;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // found on stack overflow as fix
-            std::getline(std::cin,datetime); // no date valid check for now
+            std::getline(std::cin,datetime);
             begin = std::chrono::steady_clock::now();
             optional<double> hashdate = hashmap.get(datetime);
             end = std::chrono::steady_clock::now();
@@ -126,49 +126,61 @@ int main() {
             std::cout << "What datetime would you like to see the average " << att << " for? (YYYY-MM-DD format)" << std::endl;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::getline(std::cin,datetime);
-            begin = std::chrono::steady_clock::now();
-            std::string hashdate = hashmap.getDayAverage(datetime);
-            end = std::chrono::steady_clock::now();
-            std::cout << "Hashmap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
-            std::cout << "Hashmap, " << hashdate << std::endl;
-            begin = std::chrono::steady_clock::now();
-            optional<double> heapdate = heap.getAverageOnDay(datetime);
-            end = std::chrono::steady_clock::now();
-            std::cout << "Heap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
-            std::cout << "Heap, Average on " << datetime << " : " << heapdate.value() << std::endl;
-            std::cout << std::endl;
+            if(heap.findDate(datetime).has_value()) {
+                begin = std::chrono::steady_clock::now();
+                std::string hashdate = hashmap.getDayAverage(datetime);
+                end = std::chrono::steady_clock::now();
+                std::cout << "Hashmap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+                std::cout << "Hashmap, " << hashdate << std::endl;
+                begin = std::chrono::steady_clock::now();
+                optional<double> heapdate = heap.getAverageOnDay(datetime);
+                end = std::chrono::steady_clock::now();
+                std::cout << "Heap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+                std::cout << "Heap, Average on " << datetime << " : " << heapdate.value() << std::endl;
+                std::cout << std::endl;
+            } else {
+                std::cout << "Date not found!" << std::endl;
+            }
         } else if(option == "5") {
             std::string datetime;
             std::cout << "What datetime would you like to see the lowest " << att << " for? (YYYY-MM-DD format)" << std::endl;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::getline(std::cin,datetime);
-            begin = std::chrono::steady_clock::now();
-            std::string hashdate = hashmap.getDayLowest(datetime);
-            end = std::chrono::steady_clock::now();
-            std::cout << "Hashmap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
-            std::cout << "Hashmap, " << hashdate << std::endl;
-            begin = std::chrono::steady_clock::now();
-            optional<pair<string,double>> heapdate = heap.getLowestOnDay(datetime);
-            end = std::chrono::steady_clock::now();
-            std::cout << "Heap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
-            std::cout << "Heap, Lowest on " << datetime << " : " << heapdate->second << std::endl;
-            std::cout << std::endl;
+            if(heap.findDate(datetime).has_value()) {
+                begin = std::chrono::steady_clock::now();
+                std::string hashdate = hashmap.getDayLowest(datetime);
+                end = std::chrono::steady_clock::now();
+                std::cout << "Hashmap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+                std::cout << "Hashmap, " << hashdate << std::endl;
+                begin = std::chrono::steady_clock::now();
+                optional<pair<string,double>> heapdate = heap.getLowestOnDay(datetime);
+                end = std::chrono::steady_clock::now();
+                std::cout << "Heap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+                std::cout << "Heap, Lowest on " << datetime << " : " << heapdate->second << std::endl;
+                std::cout << std::endl;
+            } else {
+                std::cout << "Date not found!" << std::endl;
+            }
         } else if (option == "6") {
             std::string datetime;
             std::cout << "What datetime would you like to see the highest " << att << " for? (YYYY-MM-DD format)" << std::endl;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::getline(std::cin,datetime);
-            begin = std::chrono::steady_clock::now();
-            std::string hashdate = hashmap.getDayHighest(datetime);
-            end = std::chrono::steady_clock::now();
-            std::cout << "Hashmap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
-            std::cout << "Hashmap, " << hashdate << std::endl;
-            begin = std::chrono::steady_clock::now();
-            optional<pair<string,double>> heapdate = heap.getHighestOnDay(datetime);
-            end = std::chrono::steady_clock::now();
-            std::cout << "Heap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
-            std::cout << "Heap, Highest on " << datetime << " : " << heapdate->second << std::endl;
-            std::cout << std::endl;
+            if(heap.findDate(datetime).has_value()) {
+                begin = std::chrono::steady_clock::now();
+                std::string hashdate = hashmap.getDayHighest(datetime);
+                end = std::chrono::steady_clock::now();
+                std::cout << "Hashmap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+                std::cout << "Hashmap, " << hashdate << std::endl;
+                begin = std::chrono::steady_clock::now();
+                optional<pair<string,double>> heapdate = heap.getHighestOnDay(datetime);
+                end = std::chrono::steady_clock::now();
+                std::cout << "Heap data accessed in " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " microseconds." << std::endl;
+                std::cout << "Heap, Highest on " << datetime << " : " << heapdate->second << std::endl;
+                std::cout << std::endl;
+            } else {
+                std::cout << "Date not found!" << std::endl;
+            }
         } else if (option == "7") { // input validated
             std::string datetime;
             std::cout << "What month would you like to see the average " << att << " for? (YYYY-MM format)" << std::endl;
