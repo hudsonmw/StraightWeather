@@ -32,7 +32,7 @@ This project utilizes two different data structures to access randomly accessed 
 ----------
 ## How to Run:
 1. Clone the repository
-2. Set the directory to the main project folder with data CSV
+2. Set the working directory to the main project folder with CSV data
 3. Build and Run
 
 
