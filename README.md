@@ -1,7 +1,9 @@
 
 # StraightWeather | The Bowling Boys
 ## By: Benjamin Adelman, Haden Anderson, Hudson Whitney
-### A simple application to access weather data by various attributes
+----------
+## A simple application to access weather data by various attributes
+### Our project lets you quickly and easily get different weather-related statistics based on location and date through a terminal interface
 ----------
 ## How to Run:
 1. Clone the repository
