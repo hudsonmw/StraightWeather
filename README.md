@@ -24,7 +24,7 @@ This project utilizes two different data structures to access randomly accessed 
 - Precipitation
 - Wind
 ----------
-## File Descriptions
+## File Descriptions:
 - CSVLoader: Declares and implements a CSVLoader class that reads the weather data, filters rows by city and attribute, and inserts each timestamp/value pair into a the hashmap and heap
 - Hashmap: Implements a hashmap with sorted linked lists of readings
 - Heap: Implements a maxheap with nodes for datatime and corresponding value
