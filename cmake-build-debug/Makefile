@@ -177,6 +177,30 @@ hashmap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAProject3.dir/build.make CMakeFiles/DSAProject3.dir/hashmap.cpp.s
 .PHONY : hashmap.cpp.s
 
+heap.o: heap.cpp.o
+.PHONY : heap.o
+
+# target to build an object file
+heap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAProject3.dir/build.make CMakeFiles/DSAProject3.dir/heap.cpp.o
+.PHONY : heap.cpp.o
+
+heap.i: heap.cpp.i
+.PHONY : heap.i
+
+# target to preprocess a source file
+heap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAProject3.dir/build.make CMakeFiles/DSAProject3.dir/heap.cpp.i
+.PHONY : heap.cpp.i
+
+heap.s: heap.cpp.s
+.PHONY : heap.s
+
+# target to generate assembly for a file
+heap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAProject3.dir/build.make CMakeFiles/DSAProject3.dir/heap.cpp.s
+.PHONY : heap.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... hashmap.o"
 	@echo "... hashmap.i"
 	@echo "... hashmap.s"
+	@echo "... heap.o"
+	@echo "... heap.i"
+	@echo "... heap.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
