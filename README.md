@@ -2,7 +2,7 @@
 # StraightWeather | The Bowling Boys
 ## By: Benjamin Adelman, Haden Anderson, Hudson Whitney
 ----------
-Summary:
+## Summary:
 
 This project utilizes two different data structures to access randomly accessed weather data as well as max/min/average weather data: a Hashmap and a Maxheap. The purpose of our project is to contrast the two data structures in different tasks to show how they differ in their ideal use cases, and to provide an easy-to-use terminal interface that lets the user access important weather data from various cities, listed below.
 
