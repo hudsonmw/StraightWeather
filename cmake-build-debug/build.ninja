@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: DSAProject3
+# Project: StraightWeather
 # Configurations: Debug
 # =============================================================================
 
@@ -41,62 +41,62 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/benx/CLionProjects/DSAProject3/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target DSAProject3
+# Object build statements for EXECUTABLE target StraightWeather
 
 
 #############################################
-# Order-only phony target for DSAProject3
+# Order-only phony target for StraightWeather
 
-build cmake_object_order_depends_target_DSAProject3: phony || CMakeFiles/DSAProject3.dir
+build cmake_object_order_depends_target_StraightWeather: phony || CMakeFiles/StraightWeather.dir
 
-build CMakeFiles/DSAProject3.dir/main.cpp.o: CXX_COMPILER__DSAProject3_unscanned_Debug /Users/benx/CLionProjects/DSAProject3/main.cpp || cmake_object_order_depends_target_DSAProject3
-  DEP_FILE = CMakeFiles/DSAProject3.dir/main.cpp.o.d
+build CMakeFiles/StraightWeather.dir/main.cpp.o: CXX_COMPILER__StraightWeather_unscanned_Debug /Users/benx/CLionProjects/DSAProject3/main.cpp || cmake_object_order_depends_target_StraightWeather
+  DEP_FILE = CMakeFiles/StraightWeather.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/DSAProject3.dir
-  OBJECT_FILE_DIR = CMakeFiles/DSAProject3.dir
-  TARGET_COMPILE_PDB = CMakeFiles/DSAProject3.dir/
-  TARGET_PDB = DSAProject3.pdb
+  OBJECT_DIR = CMakeFiles/StraightWeather.dir
+  OBJECT_FILE_DIR = CMakeFiles/StraightWeather.dir
+  TARGET_COMPILE_PDB = CMakeFiles/StraightWeather.dir/
+  TARGET_PDB = StraightWeather.pdb
 
-build CMakeFiles/DSAProject3.dir/CSVLoader.cpp.o: CXX_COMPILER__DSAProject3_unscanned_Debug /Users/benx/CLionProjects/DSAProject3/CSVLoader.cpp || cmake_object_order_depends_target_DSAProject3
-  DEP_FILE = CMakeFiles/DSAProject3.dir/CSVLoader.cpp.o.d
+build CMakeFiles/StraightWeather.dir/CSVLoader.cpp.o: CXX_COMPILER__StraightWeather_unscanned_Debug /Users/benx/CLionProjects/DSAProject3/CSVLoader.cpp || cmake_object_order_depends_target_StraightWeather
+  DEP_FILE = CMakeFiles/StraightWeather.dir/CSVLoader.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/DSAProject3.dir
-  OBJECT_FILE_DIR = CMakeFiles/DSAProject3.dir
-  TARGET_COMPILE_PDB = CMakeFiles/DSAProject3.dir/
-  TARGET_PDB = DSAProject3.pdb
+  OBJECT_DIR = CMakeFiles/StraightWeather.dir
+  OBJECT_FILE_DIR = CMakeFiles/StraightWeather.dir
+  TARGET_COMPILE_PDB = CMakeFiles/StraightWeather.dir/
+  TARGET_PDB = StraightWeather.pdb
 
-build CMakeFiles/DSAProject3.dir/hashmap.cpp.o: CXX_COMPILER__DSAProject3_unscanned_Debug /Users/benx/CLionProjects/DSAProject3/hashmap.cpp || cmake_object_order_depends_target_DSAProject3
-  DEP_FILE = CMakeFiles/DSAProject3.dir/hashmap.cpp.o.d
+build CMakeFiles/StraightWeather.dir/hashmap.cpp.o: CXX_COMPILER__StraightWeather_unscanned_Debug /Users/benx/CLionProjects/DSAProject3/hashmap.cpp || cmake_object_order_depends_target_StraightWeather
+  DEP_FILE = CMakeFiles/StraightWeather.dir/hashmap.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/DSAProject3.dir
-  OBJECT_FILE_DIR = CMakeFiles/DSAProject3.dir
-  TARGET_COMPILE_PDB = CMakeFiles/DSAProject3.dir/
-  TARGET_PDB = DSAProject3.pdb
+  OBJECT_DIR = CMakeFiles/StraightWeather.dir
+  OBJECT_FILE_DIR = CMakeFiles/StraightWeather.dir
+  TARGET_COMPILE_PDB = CMakeFiles/StraightWeather.dir/
+  TARGET_PDB = StraightWeather.pdb
 
-build CMakeFiles/DSAProject3.dir/heap.cpp.o: CXX_COMPILER__DSAProject3_unscanned_Debug /Users/benx/CLionProjects/DSAProject3/heap.cpp || cmake_object_order_depends_target_DSAProject3
-  DEP_FILE = CMakeFiles/DSAProject3.dir/heap.cpp.o.d
+build CMakeFiles/StraightWeather.dir/heap.cpp.o: CXX_COMPILER__StraightWeather_unscanned_Debug /Users/benx/CLionProjects/DSAProject3/heap.cpp || cmake_object_order_depends_target_StraightWeather
+  DEP_FILE = CMakeFiles/StraightWeather.dir/heap.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/DSAProject3.dir
-  OBJECT_FILE_DIR = CMakeFiles/DSAProject3.dir
-  TARGET_COMPILE_PDB = CMakeFiles/DSAProject3.dir/
-  TARGET_PDB = DSAProject3.pdb
+  OBJECT_DIR = CMakeFiles/StraightWeather.dir
+  OBJECT_FILE_DIR = CMakeFiles/StraightWeather.dir
+  TARGET_COMPILE_PDB = CMakeFiles/StraightWeather.dir/
+  TARGET_PDB = StraightWeather.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target DSAProject3
+# Link build statements for EXECUTABLE target StraightWeather
 
 
 #############################################
-# Link the executable DSAProject3
+# Link the executable StraightWeather
 
-build DSAProject3: CXX_EXECUTABLE_LINKER__DSAProject3_Debug CMakeFiles/DSAProject3.dir/main.cpp.o CMakeFiles/DSAProject3.dir/CSVLoader.cpp.o CMakeFiles/DSAProject3.dir/hashmap.cpp.o CMakeFiles/DSAProject3.dir/heap.cpp.o
+build StraightWeather: CXX_EXECUTABLE_LINKER__StraightWeather_Debug CMakeFiles/StraightWeather.dir/main.cpp.o CMakeFiles/StraightWeather.dir/CSVLoader.cpp.o CMakeFiles/StraightWeather.dir/hashmap.cpp.o CMakeFiles/StraightWeather.dir/heap.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
-  OBJECT_DIR = CMakeFiles/DSAProject3.dir
+  OBJECT_DIR = CMakeFiles/StraightWeather.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/DSAProject3.dir/
-  TARGET_FILE = DSAProject3
-  TARGET_PDB = DSAProject3.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/StraightWeather.dir/
+  TARGET_FILE = StraightWeather
+  TARGET_PDB = StraightWeather.pdb
 
 
 #############################################
@@ -132,7 +132,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/benx/CLionProjects/DSAProject3/cmake-build-debug
 
-build all: phony DSAProject3
+build all: phony StraightWeather
 
 # =============================================================================
 # Built-in targets
